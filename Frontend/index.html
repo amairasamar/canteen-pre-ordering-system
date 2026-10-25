@@ -1,10 +1,250 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Canteen Pre-Ordering System </title>
-  </head>
-  <body>
-    <h1>WELCOME TO COLLEGE CANTEEN</h1>
-    <p>Pre-Order your food and save your time</p>
-  </body>
+<head>
+<meta charset="utf-8">
+<title>Campus Canteen</title>
+</head>
+<body>
+
+<header>
+  <h1>Campus Canteen</h1>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#cart">Cart</a>
+    <a href="#orders">My Orders</a>
+    <a href="#login">Login</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <h2>Order ahead, skip the queue</h2>
+  <p>Browse today's menu, add your items, pick a pickup time, and collect with your token number.</p>
+  <form action="/search" method="get">
+    <label for="search">Search for food</label>
+    <input type="text" id="search" name="q" placeholder="Search for dosa, burger, coffee...">
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<section id="categories">
+  <h3>Categories</h3>
+  <ul>
+    <li><a href="#breakfast">Breakfast</a></li>
+    <li><a href="#snacks">Snacks</a></li>
+    <li><a href="#lunch">Lunch</a></li>
+    <li><a href="#beverages">Beverages</a></li>
+    <li><a href="#desserts">Desserts</a></li>
+  </ul>
+</section>
+
+<section id="menu">
+  <h3>Today's Menu</h3>
+
+  <article id="breakfast">
+    <h4>Breakfast</h4>
+
+    <div class="menu-item">
+      <h5>Masala Dosa</h5>
+      <p>Crisp rice crepe with potato filling and chutney.</p>
+      <p>Rating: 4.5 out of 5</p>
+      <p>Price: Rs 50</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="1">
+        <label for="qty1">Quantity</label>
+        <input type="number" id="qty1" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="menu-item">
+      <h5>Idli Sambar</h5>
+      <p>Steamed rice cakes served with lentil sambar.</p>
+      <p>Rating: 4.3 out of 5</p>
+      <p>Price: Rs 35</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="2">
+        <label for="qty2">Quantity</label>
+        <input type="number" id="qty2" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+  </article>
+
+  <article id="snacks">
+    <h4>Snacks</h4>
+
+    <div class="menu-item">
+      <h5>Veg Burger</h5>
+      <p>Grilled patty, lettuce and sauce in a soft bun.</p>
+      <p>Rating: 4.2 out of 5</p>
+      <p>Price: Rs 40</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="3">
+        <label for="qty3">Quantity</label>
+        <input type="number" id="qty3" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="menu-item">
+      <h5>Samosa (2 pcs)</h5>
+      <p>Crispy pastry filled with spiced potato.</p>
+      <p>Rating: 4.1 out of 5</p>
+      <p>Price: Rs 20</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="4">
+        <label for="qty4">Quantity</label>
+        <input type="number" id="qty4" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+  </article>
+
+  <article id="lunch">
+    <h4>Lunch</h4>
+
+    <div class="menu-item">
+      <h5>Veg Thali</h5>
+      <p>Rice, dal, two curries, roti and salad.</p>
+      <p>Rating: 4.6 out of 5</p>
+      <p>Price: Rs 70</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="5">
+        <label for="qty5">Quantity</label>
+        <input type="number" id="qty5" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="menu-item">
+      <h5>Chicken Biryani</h5>
+      <p>Fragrant rice layered with spiced chicken.</p>
+      <p>Rating: 4.7 out of 5</p>
+      <p>Status: Sold out</p>
+    </div>
+  </article>
+
+  <article id="beverages">
+    <h4>Beverages</h4>
+
+    <div class="menu-item">
+      <h5>Masala Chai</h5>
+      <p>Hot spiced milk tea.</p>
+      <p>Rating: 4.4 out of 5</p>
+      <p>Price: Rs 15</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="7">
+        <label for="qty7">Quantity</label>
+        <input type="number" id="qty7" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="menu-item">
+      <h5>Cold Coffee</h5>
+      <p>Chilled coffee blended with milk and ice.</p>
+      <p>Rating: 4.2 out of 5</p>
+      <p>Status: Sold out</p>
+    </div>
+  </article>
+
+  <article id="desserts">
+    <h4>Desserts</h4>
+
+    <div class="menu-item">
+      <h5>Gulab Jamun (2 pcs)</h5>
+      <p>Soft milk dumplings in sugar syrup.</p>
+      <p>Rating: 4.5 out of 5</p>
+      <p>Price: Rs 30</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="item_id" value="9">
+        <label for="qty9">Quantity</label>
+        <input type="number" id="qty9" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+  </article>
+</section>
+
+<aside id="cart">
+  <h3>Your Cart</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Masala Dosa</td>
+        <td>1</td>
+        <td>Rs 50</td>
+      </tr>
+      <tr>
+        <td>Samosa (2 pcs)</td>
+        <td>2</td>
+        <td>Rs 40</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total</td>
+        <td>Rs 90</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <form action="/checkout" method="post">
+    <label for="pickup_time">Pickup Time</label>
+    <select id="pickup_time" name="pickup_time">
+      <option value="12:30">12:30 PM</option>
+      <option value="13:00">1:00 PM</option>
+      <option value="13:15">1:15 PM</option>
+      <option value="13:30">1:30 PM</option>
+    </select>
+
+    <label for="note">Note (optional)</label>
+    <input type="text" id="note" name="note" placeholder="e.g. less spicy">
+
+    <fieldset>
+      <legend>Payment Mode</legend>
+      <input type="radio" id="pay_online" name="payment_mode" value="online" checked>
+      <label for="pay_online">Pay Online</label>
+      <input type="radio" id="pay_counter" name="payment_mode" value="counter">
+      <label for="pay_counter">Pay at Pickup</label>
+    </fieldset>
+
+    <button type="submit">Place Order</button>
+  </form>
+</aside>
+
+<section id="orders">
+  <h3>My Orders</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>Items</th>
+        <th>Status</th>
+        <th>Pickup Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#042</td>
+        <td>Masala Dosa, Samosa x2</td>
+        <td>Preparing</td>
+        <td>1:15 PM</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>&copy; 2026 Campus Canteen Pre-Ordering System</p>
+</footer>
+
+</body>
 </html>

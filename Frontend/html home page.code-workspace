@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "canteen-pre-ordering-system",
+			"path": "../canteen-pre-ordering-system"
+		}
+	],
+	"settings": {}
+}
